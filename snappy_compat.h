@@ -79,8 +79,8 @@ static inline u64 put_unaligned64(u64 t, void *p)
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(*(x)))
 
-#define likely(x) __builtin_expect((x), 1)
-#define unlikely(x) __builtin_expect((x), 0)
+#define likely(x) __builtin_expect(!!(x), 1)
+#define unlikely(x) __builtin_expect(!!(x), 0)
 
 #define min_t(t,x,y) ((x) < (y) ? (x) : (y))
 #define max_t(t,x,y) ((x) > (y) ? (x) : (y))
